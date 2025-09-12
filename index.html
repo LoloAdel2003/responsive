@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Tailwind Website</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Flowbite CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@1.7.0/dist/flowbite.min.css" rel="stylesheet">
+    <!-- Font Awesome CDN -->
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+/>
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navbar -->
+   
+<nav class="bg-white border-gray-200 dark:bg-gray-900">
+  <!-- Top Bar Desktop -->
+  <div class="bg-[#303030] hidden md:flex">
+    <div class="max-w-screen-xl   flex justify-between mx-auto p-2 w-full text-sm text-gray-300 font-normal">
+      <!-- Left -->
+      <div class="flex space-x-4">
+        <div class="flex items-center space-x-2 hidden lg:block">
+          <i class="fas fa-phone text-gray-300"></i>
+          <span class="text-gray-300">[+800] 123 456 7890</span>
+        </div>
+        <div class="flex items-center space-x-2">
+          <i class="fas fa-envelope text-gray-300"></i>
+          <span class="text-gray-300">alaa@gmail.com</span>
+        </div>
+      </div>
+
+      <!-- Right as Links -->
+      <div class="flex space-x-4">
+        <a href="#" class="flex items-center space-x-2 text-gray-300">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>Location store</span>
+        </a>
+          <a href="#" class="flex items-center space-x-2 text-gray-300">
+          <i class="fas fa-bars"></i>
+          <span>Blag</span>
+        </a>
+        <a href="#" class="flex items-center space-x-2 text-gray-300">
+          <i class="fas fa-credit-card"></i>
+          <span>Payment</span>
+        </a>
+        <a href="#" class="flex items-center space-x-2 text-gray-300">
+          <i class="fas fa-truck"></i>
+          <span>Delivery</span>
+        </a>
+        <a href="#" class="flex items-center space-x-2 text-gray-300">
+          <i class="fas fa-sign-in-alt"></i>
+          <span>Register / Sign In</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navbar -->
+  <div class="max-w-screen-xl flex flex-wrap items-center justify-between px-4 lg:px-2  mx-auto py-4">
+    <!-- Logo Always Visible -->
+    <a href="#" class="flex items-center space-x-3">
+      <img src="imges/logo.png" class="w-20 md:w-24 lg:w-32" alt="Logo" />
+    </a>
+
+    <!-- Desktop Description -->
+    <span class="hidden lg:block ml-5 text-gray-700 text-sm w-[150px]">Description Of Your Online Store</span>
+
+    <!-- Desktop Search & Icons -->
+    <div class="hidden md:flex flex-1 justify-center items-center space-x-6 relative max-w-md">
+      <input type="text" placeholder="Search..." class="w-full max-w-md p-2 ps-4 rounded-2xl border border-gray-300 focus:ring-[#ff8e0c] focus:border-[#ff8e0c]" />
+      <!-- Search Button inside input -->
+      <button class="absolute right-0 top-1/2 -translate-y-1/2 bg-[#ff8e0c] p-2 px-6 rounded-r-2xl ">
+        <i class="fas fa-search text-white"></i>
+      </button>
+    </div>
+
+    <!-- "7 days..." Text -->
+    <span class="hidden lg:block font-normal text-[#ff8e0c] text-sm w-[180px] text-left">
+      7 days a week from 8:00 am to 5:00 pm
+    </span>
+
+    <!-- Desktop Heart & Cart -->
+    <div class="hidden md:flex items-center space-x-4">
+      <div class="relative">
+        <i class="far fa-heart text-black text-xl lg:text-2xl"></i>
+        <span class="absolute -top-2 -right-2 bg-[#ff8e0c] text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">3</span>
+      </div>
+
+      <div class="relative">
+        <i class="fas fa-shopping-cart text-black text-xl lg:text-2xl"></i>
+        <span class="absolute -top-2 -right-2 bg-[#ff8e0c] text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">5</span>
+      </div>
+
+      <div class="text-sm">
+        My Cart
+        <span class="block text-gray-600">$1000</span>
+      </div>
+    </div>
+
+    <!-- Mobile Icons -->
+    <div class="flex flex-col items-center space-y-2 md:hidden">
+      <!-- Logo Already Visible -->
+
+      <!-- Icons Row -->
+      <div class="flex items-center space-x-3">
+        <!-- Mobile Search -->
+        <button id="mobile-search-btn" class="text-black hover:text-gray-700 focus:outline-none">
+          <i class="fas fa-search text-xl"></i>
+        </button>
+
+        <!-- Heart and Cart with badge -->
+        <div class="relative">
+          <i class="far fa-heart text-black text-xl lg:text-2xl"></i>
+          <span class="absolute -top-1 -right-1 bg-[#ff8e0c] text-white text-xs w-4 h-4 flex items-center justify-center rounded-full">3</span>
+        </div>
+        <div class="relative">
+          <i class="fas fa-shopping-cart text-black text-xl lg:text-2xl"></i>
+          <span class="absolute -top-1 -right-1 bg-[#ff8e0c] text-white text-xs w-4 h-4 flex items-center justify-center rounded-full">5</span>
+        </div>
+
+        <!-- Mobile Menu -->
+        <button id="mobile-menu-btn" class="text-black hover:text-gray-700 focus:outline-none">
+          <i class="fas fa-bars text-xl lg:text-2xl"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Search Input -->
+  <div id="mobile-search" class="hidden md:hidden bg-gray-50 dark:bg-gray-800 p-4">
+    <input type="text" placeholder="Search..." class="block w-full p-2 border rounded-2xl focus:ring-[#ff8e0c] focus:border-[#ff8e0c]" />
+  </div>
+
+  <!-- Mobile Menu Items -->
+  <div id="mobile-menu" class="hidden md:hidden bg-gray-50 dark:bg-gray-800 p-4 space-y-4">
+    <a href="#" class="flex items-center space-x-2 text-[#af926a]">
+      <i class="fas fa-phone"></i>
+      <span>[+800] 123 456 7890</span>
+    </a>
+    <a href="#" class="flex items-center space-x-2 text-[#af926a]">
+      <i class="fas fa-envelope"></i>
+      <span>alaa@gmail.com</span>
+    </a>
+    <a href="#" class="flex items-center space-x-2 text-[#af926a]">
+      <i class="fas fa-map-marker-alt"></i>
+      <span>Location store</span>
+    </a>
+    <a href="#" class="flex items-center space-x-2 text-[#af926a]">
+      <i class="fas fa-credit-card"></i>
+      <span>Payment</span>
+    </a>
+    <a href="#" class="flex items-center space-x-2 text-[#af926a]">
+      <i class="fas fa-truck"></i>
+      <span>Delivery</span>
+    </a>
+    <a href="#" class="flex items-center space-x-2 text-[#af926a]">
+      <i class="fas fa-sign-in-alt"></i>
+      <span>Register / Sign In</span>
+    </a>
+  </div>
+<!-- Bottom Bar -->
+<div class="relative shadow-lg bg-white">
+  <div class="max-w-screen-xl px-4 lg:px-2 flex justify-between mx-auto w-full text-sm font-normal">
+    <div class="w-full border-t border-gray-200">
+      <ul class="flex overflow-x-auto no-scrollbar space-x-2 text-sm font-medium text-center text-gray-600">
+        <li>
+          <a href="#"
+            class="inline-flex items-center whitespace-nowrap px-4 py-3 pr-20 text-white bg-orange-500">
+            <i class="fas fa-th-large mr-2"></i> All Category
+          </a>
+        </li>
+        <li><a href="#" class="inline-block whitespace-nowrap px-4 py-2 rounded-md hover:bg-gray-100 hover:text-gray-900">Apple</a></li>
+        <li><a href="#" class="inline-block whitespace-nowrap px-4 py-2 rounded-md hover:bg-gray-100 hover:text-gray-900">Samsung</a></li>
+        <li><a href="#" class="inline-block whitespace-nowrap px-4 py-2 rounded-md hover:bg-gray-100 hover:text-gray-900">Meizu</a></li>
+        <li><a href="#" class="inline-block whitespace-nowrap px-4 py-2 rounded-md hover:bg-gray-100 hover:text-gray-900">Xiaomi</a></li>
+        <li><a href="#" class="inline-block whitespace-nowrap px-4 py-2 rounded-md hover:bg-gray-100 hover:text-gray-900">Honor</a></li>
+        <li><a href="#" class="inline-block whitespace-nowrap px-4 py-2 rounded-md hover:bg-gray-100 hover:text-gray-900">Huawei</a></li>
+        <li><a href="#" class="inline-block whitespace-nowrap px-4 py-2 rounded-md hover:bg-gray-100 hover:text-gray-900">Asus</a></li>
+        <li><a href="#" class="inline-block whitespace-nowrap px-4 py-2 rounded-md hover:bg-gray-100 hover:text-gray-900">Nokia</a></li>
+        <li><a href="#" class="inline-block whitespace-nowrap px-4 py-2 rounded-md hover:bg-gray-100 hover:text-gray-900">Motorola</a></li>
+        <li><a href="#" class="inline-block whitespace-nowrap px-4 py-2 rounded-md hover:bg-gray-100 hover:text-gray-900">Caterpillar</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+
+</nav>
+
+
+
+
+<nav class="flex justify-start max-w-screen-xl px-4 lg:px-2 mx-auto pt-3 md:pt-6" aria-label="Breadcrumb">
+  <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
+    <li class="inline-flex items-center">
+      <a href="#" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-orange-400 dark:text-gray-400 dark:hover:text-white">
+        <svg class="w-3 h-3 me-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+          <path d="m19.707 9.293-2-2-7-7a1 1 0 0 0-1.414 0l-7 7-2 2a1 1 0 0 0 1.414 1.414L2 10.414V18a2 2 0 0 0 2 2h3a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h3a2 2 0 0 0 2-2v-7.586l.293.293a1 1 0 0 0 1.414-1.414Z"/>
+        </svg>
+        Home
+      </a>
+    </li>
+    <li>
+      <div class="flex items-center">
+        <span class="mx-2 text-gray-400">/</span>
+        <a href="#" class="text-sm font-medium text-gray-700 hover:text-orange-400 dark:text-gray-400 dark:hover:text-white">
+          Category
+        </a>
+      </div>
+    </li>
+    <li aria-current="page">
+      <div class="flex items-center">
+        <span class="mx-2 text-gray-400">/</span>
+        <span class="text-sm font-medium text-gray-500 dark:text-gray-400">
+          Tablet & Laptops Acceccories
+        </span>
+      </div>
+    </li>
+  </ol>
+</nav>
+<!-- main section  -->
+<section class="max-w-screen-xl px-4 mx-auto">
+  <!-- العنوان -->
+  <h1 class="text-xl md:text-2xl font-bold text-gray-800 py-3 lg:py-6">
+    Tablet & Laptops Accessories
+  </h1>
+
+  <div class="flex gap-6 flex-col lg:flex-row w-full">
+    
+    <!-- Sidebar Filter -->
+    <div id="filter-sidebar" class="bg-white p-4 shadow-lg overflow-y-auto  lg:bg-transparent rounded-lg hidden lg:block lg:w-[25%] transition-transform duration-300 ease-in-out z-50">
+      
+      <!-- Header close button (mobile) -->
+      <div class="flex justify-between items-center lg:hidden mb-4">
+        <h3 class="text-lg font-bold text-gray-800">Refine by</h3>
+        <button id="close-filter-btn" class="text-gray-500 hover:text-gray-700 text-2xl">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+
+      <h3 class="hidden lg:block text-lg font-semibold text-gray-800 mb-4">Refine by</h3>
+
+      <!-- Category -->
+      <div class="mb-6">
+        <h4 class="font-medium text-gray-700 mb-2 border-b pb-2">Category</h4>
+        <ul class="space-y-2 text-sm text-gray-600">
+          <li><a href="#" class="hover:text-orange-500">All Categories</a></li>
+          <li><a href="#" class="hover:text-orange-500">Cameras</a></li>
+          <li><a href="#" class="hover:text-orange-500">Games & Entertainment</a></li>
+          <li><a href="#" class="hover:text-orange-500">Headphones</a></li>
+          <li><a href="#" class="hover:text-orange-500">Laptops</a></li>
+        </ul>
+      </div>
+
+      <!-- Price -->
+      <div class="mb-6">
+        <h4 class="font-medium text-gray-700 mb-2 border-b pb-2">Price</h4>
+        <div class="flex items-center space-x-2 text-sm text-gray-600">
+          <span>$0</span>
+          <input type="range" class="w-full">
+          <span>$1000</span>
+        </div>
+      </div>
+
+      <!-- Operating System -->
+      <div class="mb-6">
+        <h4 class="font-medium text-gray-700 mb-2 border-b pb-2">Operating System</h4>
+        <ul class="space-y-2 text-sm text-gray-600">
+          <li><label><input type="checkbox" class="mr-2 rounded">Android</label></li>
+          <li><label><input type="checkbox" class="mr-2 rounded">Android 4.4</label></li>
+          <li><label><input type="checkbox" class="mr-2 rounded">Android 5.0</label></li>
+          <li><label><input type="checkbox" class="mr-2 rounded">Android 6.0</label></li>
+          <li><label><input type="checkbox" class="mr-2 rounded">Windows</label></li>
+        </ul>
+      </div>
+
+      <!-- Screen Size -->
+      <div class="mb-6">
+        <h4 class="font-medium text-gray-700 mb-2 border-b pb-2">Screen Size</h4>
+        <ul class="space-y-2 text-sm text-gray-600">
+          <li><label><input type="checkbox" class="mr-2 rounded">10.1 inch</label></li>
+          <li><label><input type="checkbox" class="mr-2 rounded">12 inch</label></li>
+          <li><label><input type="checkbox" class="mr-2 rounded">7 inch</label></li>
+          <li><label><input type="checkbox" class="mr-2 rounded">8.9 inch</label></li>
+          <li><label><input type="checkbox" class="mr-2 rounded">9 inch</label></li>
+        </ul>
+      </div>
+
+      <!-- Tags -->
+      <div class="mb-6">
+        <h4 class="font-medium text-gray-700 mb-2 border-b pb-2">Product Tags</h4>
+        <div class="flex flex-wrap gap-2 text-xs">
+          <span class="bg-gray-200 text-gray-700 rounded-full px-3 py-1">Laptops</span>
+          <span class="bg-gray-200 text-gray-700 rounded-full px-3 py-1">Windows</span>
+          <span class="bg-gray-200 text-gray-700 rounded-full px-3 py-1">Tablet</span>
+          <span class="bg-gray-200 text-gray-700 rounded-full px-3 py-1">Android</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Content -->
+   <div class="content flex-1">
+                <div class="flex justify-between items-center mb-4">
+                    <div class="text-sm text-gray-600">Showing 1–16 of 135 results</div>
+                    <div class="flex items-center space-x-2">
+                        <label for="sort-by" class="text-sm text-gray-600 hidden md:block">Sort by:</label>
+                        <select id="sort-by" class="border border-gray-300 rounded-md px-2 py-1 text-sm">
+                            <option>Sort by price: low to high</option>
+                            <option>Sort by price: high to low</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="lg:hidden flex justify-end mb-4">
+                    <button id="show-filter-btn" class="bg-orange-500 text-white px-4 py-2 rounded-md flex items-center space-x-2">
+                        <i class="fas fa-filter"></i>
+                        <span>Filter</span>
+                    </button>
+                </div>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden relative group cursor-pointer transform hover:scale-105 transition-transform duration-300">
+                        <div class="absolute top-2 right-2 bg-orange-500 text-white text-xs font-semibold px-2 py-1 rounded-md">
+                            -25%
+                        </div>
+                        <img src="imges/alex-lo-Pmp6hL3x_ZE-unsplash.jpg" alt="Product 1" class="w-full h-40 object-cover">
+                        <div class="p-4 text-center">
+                            <div class="text-yellow-400 text-sm mb-2">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                            </div>
+                            <h4 class="text-sm font-semibold text-gray-800">Tablet Android 10.1 inch</h4>
+                            <p class="text-orange-500 font-bold mt-2">$329.99</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden relative group cursor-pointer transform hover:scale-105 transition-transform duration-300">
+                        <div class="absolute top-2 right-2 bg-red-600 text-white text-xs font-semibold px-2 py-1 rounded-md">
+                            BESTSELLER
+                        </div>
+                        <img src="imges/andrey-matveev-XV-HJcfzJXw-unsplash.jpg" alt="Product 2" class="w-full h-40 object-cover">
+                        <div class="p-4 text-center">
+                            <div class="text-yellow-400 text-sm mb-2">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <h4 class="text-sm font-semibold text-gray-800">Tablet Android 10.1 inch</h4>
+                            <p class="text-orange-500 font-bold mt-2">$139.99</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden relative group cursor-pointer transform hover:scale-105 transition-transform duration-300">
+                        <img src="imges/bryn-young-5kmja_aE1vI-unsplash.jpg" alt="Product 3" class="w-full h-40 object-cover">
+                        <div class="p-4 text-center">
+                            <div class="text-yellow-400 text-sm mb-2">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                            </div>
+                            <h4 class="text-sm font-semibold text-gray-800">Laptop Core i7 Design</h4>
+                            <p class="text-orange-500 font-bold mt-2">$856.99</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden relative group cursor-pointer transform hover:scale-105 transition-transform duration-300">
+                        <img src="imges/bryn-young-USG07T_PVqs-unsplash.jpg" alt="Product 4" class="w-full h-40 object-cover">
+                        <div class="p-4 text-center">
+                            <div class="text-yellow-400 text-sm mb-2">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <h4 class="text-sm font-semibold text-gray-800">Tablet Samsung 12.1 inch</h4>
+                            <p class="text-orange-500 font-bold mt-2">$299.99</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden relative group cursor-pointer transform hover:scale-105 transition-transform duration-300">
+                        <div class="absolute top-2 right-2 bg-orange-500 text-white text-xs font-semibold px-2 py-1 rounded-md">
+                            -25%
+                        </div>
+                        <img src="imges/dmitry-chernyshov-mP7aPSUm7aE-unsplash.jpg" alt="Product 5" class="w-full h-40 object-cover">
+                        <div class="p-4 text-center">
+                            <div class="text-yellow-400 text-sm mb-2">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                            </div>
+                            <h4 class="text-sm font-semibold text-gray-800">Tablet 7 inch Android</h4>
+                            <p class="text-orange-500 font-bold mt-2">$421.99</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden relative group cursor-pointer transform hover:scale-105 transition-transform duration-300">
+                        <img src="imges/immo-wegmann-HtsVneqf5Fg-unsplash.jpg" alt="Product 6" class="w-full h-40 object-cover">
+                        <div class="p-4 text-center">
+                            <div class="text-yellow-400 text-sm mb-2">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                            </div>
+                            <h4 class="text-sm font-semibold text-gray-800">Laptop Asus Core i5</h4>
+                            <p class="text-orange-500 font-bold mt-2">$885.40</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden relative group cursor-pointer transform hover:scale-105 transition-transform duration-300">
+                        <div class="absolute top-2 right-2 bg-orange-500 text-white text-xs font-semibold px-2 py-1 rounded-md">
+                            NEW
+                        </div>
+                        <img src="imges/kawal-dhillon-7PB4Hw21ujw-unsplash.jpg" alt="Product 7" class="w-full h-40 object-cover">
+                        <div class="p-4 text-center">
+                            <div class="text-yellow-400 text-sm mb-2">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                            </div>
+                            <h4 class="text-sm font-semibold text-gray-800">Laptop Lenovo 8.9 inch</h4>
+                            <p class="text-orange-500 font-bold mt-2">$159.00</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden relative group cursor-pointer transform hover:scale-105 transition-transform duration-300">
+                        <img src="imges/kompjuteri-com-0TWyt__e8Tc-unsplash.jpg" alt="Product 8" class="w-full h-40 object-cover">
+                        <div class="p-4 text-center">
+                            <div class="text-yellow-400 text-sm mb-2">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <h4 class="text-sm font-semibold text-gray-800">Tablet HP PC 10 inch</h4>
+                            <p class="text-orange-500 font-bold mt-2">$312.99</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden relative group cursor-pointer transform hover:scale-105 transition-transform duration-300">
+                        <div class="absolute top-2 right-2 bg-orange-500 text-white text-xs font-semibold px-2 py-1 rounded-md">
+                            -25%
+                        </div>
+                        <img src="imges/workperch-sYX0NAzV9BY-unsplash.jpg" alt="Product 9" class="w-full h-40 object-cover">
+                        <div class="p-4 text-center">
+                            <div class="text-yellow-400 text-sm mb-2">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                            </div>
+                            <h4 class="text-sm font-semibold text-gray-800">Tablet Android 10.1 inch</h4>
+                            <p class="text-orange-500 font-bold mt-2">$199.99</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden relative group cursor-pointer transform hover:scale-105 transition-transform duration-300">
+                        <div class="absolute top-2 right-2 bg-red-600 text-white text-xs font-semibold px-2 py-1 rounded-md">
+                            BESTSELLER
+                        </div>
+                        <img src="imges/sincerely-media-Q8gIEp4IWlo-unsplash.jpg" alt="Product 10" class="w-full h-40 object-cover">
+                        <div class="p-4 text-center">
+                            <div class="text-yellow-400 text-sm mb-2">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <h4 class="text-sm font-semibold text-gray-800">Tablet Android 10.1 inch</h4>
+                            <p class="text-orange-500 font-bold mt-2">$99.99</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden relative group cursor-pointer transform hover:scale-105 transition-transform duration-300">
+                        <div class="absolute top-2 right-2 bg-red-600 text-white text-xs font-semibold px-2 py-1 rounded-md">
+                            NEW
+                        </div>
+                        <img src="imges/workperch-sYX0NAzV9BY-unsplash (1).jpg" alt="Product 11" class="w-full h-40 object-cover">
+                        <div class="p-4 text-center">
+                            <div class="text-yellow-400 text-sm mb-2">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                            </div>
+                            <h4 class="text-sm font-semibold text-gray-800">Tablet HP PC 8 inch</h4>
+                            <p class="text-orange-500 font-bold mt-2">$154.00</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden relative group cursor-pointer transform hover:scale-105 transition-transform duration-300">
+                        <div class="absolute top-2 right-2 bg-red-600 text-white text-xs font-semibold px-2 py-1 rounded-md">
+                            3G
+                        </div>
+                        <img src="imges/sajad-nori-kmAFNd-XBo0-unsplash.jpg" alt="Product 12" class="w-full h-40 object-cover">
+                        <div class="p-4 text-center">
+                            <div class="text-yellow-400 text-sm mb-2">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <h4 class="text-sm font-semibold text-gray-800">Tablet HP PC 12 inch</h4>
+                            <p class="text-orange-500 font-bold mt-2">$1025.00</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flex justify-center mt-8">
+                    <nav>
+                        <ul class="flex items-center space-x-2">
+                            <li>
+                                <a href="#" class="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 rounded-l-lg">
+                                    Previous
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="px-3 py-2 leading-tight text-orange-600 bg-orange-50 border border-orange-300 rounded-md">
+                                    1
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 rounded-md hover:bg-gray-100 hover:text-gray-700">
+                                    2
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 rounded-md hover:bg-gray-100 hover:text-gray-700">
+                                    3
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700">
+                                    Next
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        
+        <div class="mt-12">
+            <h2 class="text-xl md:text-2xl font-bold text-gray-800 mb-6">Recently Viewed</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden relative group cursor-pointer transform hover:scale-105 transition-transform duration-300">
+                    <div class="absolute top-2 right-2 bg-orange-500 text-white text-xs font-semibold px-2 py-1 rounded-md">
+                        -25%
+                    </div>
+                    <img src="imges/marine-sintes-i5-lZ09O1Dk-unsplash.jpg" alt="Product 1" class="w-full h-40 object-cover">
+                    <div class="p-4 text-center">
+                        <div class="text-yellow-400 text-sm mb-2">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                        </div>
+                        <h4 class="text-sm font-semibold text-gray-800">Tablet Android 10.1 inch</h4>
+                        <p class="text-orange-500 font-bold mt-2">$100.99</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md overflow-hidden relative group cursor-pointer transform hover:scale-105 transition-transform duration-300">
+                    <img src="imges/alex-lo-Pmp6hL3x_ZE-unsplash.jpg" alt="Product 2" class="w-full h-40 object-cover">
+                    <div class="p-4 text-center">
+                        <div class="text-yellow-400 text-sm mb-2">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <h4 class="text-sm font-semibold text-gray-800">Tablet Android 10.1 inch</h4>
+                        <p class="text-orange-500 font-bold mt-2">$99.99</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md overflow-hidden relative group cursor-pointer transform hover:scale-105 transition-transform duration-300">
+                    <div class="absolute top-2 right-2 bg-red-600 text-white text-xs font-semibold px-2 py-1 rounded-md">
+                        NEW
+                    </div>
+                    <img src="imges/bryn-young-5kmja_aE1vI-unsplash.jpg" alt="Product 3" class="w-full h-40 object-cover">
+                    <div class="p-4 text-center">
+                        <div class="text-yellow-400 text-sm mb-2">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                        </div>
+                        <h4 class="text-sm font-semibold text-gray-800">Tablet HP PC 8 inch</h4>
+                        <p class="text-orange-500 font-bold mt-2">$154.00</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md overflow-hidden relative group cursor-pointer transform hover:scale-105 transition-transform duration-300">
+                    <div class="absolute top-2 right-2 bg-red-600 text-white text-xs font-semibold px-2 py-1 rounded-md">
+                        3G
+                    </div>
+                    <img src="imges/andrey-matveev-XV-HJcfzJXw-unsplash.jpg" alt="Product 4" class="w-full h-40 object-cover">
+                    <div class="p-4 text-center">
+                        <div class="text-yellow-400 text-sm mb-2">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <h4 class="text-sm font-semibold text-gray-800">Tablet HP PC 12 inch</h4>
+                        <p class="text-orange-500 font-bold mt-2">$1025.00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-12 mb-6">
+            <h2 class="text-xl font-bold text-gray-800 mb-4">Most Search Keywords</h2>
+            <div class="text-gray-600 text-sm leading-relaxed">
+                <span class="text-orange-500">Laptops</span>, <span class="text-orange-500">Laptops Accessories</span>, <span class="text-orange-500">Gaming Laptop</span>, <span class="text-orange-500">Camera Lens</span>, <span class="text-orange-500">Audio Laptop</span>, <span class="text-orange-500">Audio Speaker</span>, <span class="text-orange-500">Audio Headphones</span>, <span class="text-orange-500">Gaming Mouse</span>, <span class="text-orange-500">Keyboard</span>, <span class="text-orange-500">Printers</span>, <span class="text-orange-500">Monitors</span>
+            </div>
+  </div>
+
+  <!-- Overlay (mobile) -->
+  <div id="filter-overlay" class="fixed inset-0 bg-black bg-opacity-30 z-40 hidden lg:hidden"></div>
+</section>
+
+
+
+
+
+
+
+    <footer class="bg-[#212121] text-gray-300 py-10">
+        <div class="max-w-screen-xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 justify-center">
+            <div>
+                <h3 class="font-semibold text-white mb-4">Contact us</h3>
+                <p class="text-sm mb-2">My online store description.</p>
+                <div class="space-y-2 text-sm">
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-map-marker-alt text-orange-500"></i>
+                        <span>Location: New York, NY 10001</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-envelope text-orange-500"></i>
+                        <span>email@example.com</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-phone text-orange-500"></i>
+                        <span>[+800] 123 456 7890</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div>
+                <h3 class="font-semibold text-white mb-4">Policies & Info</h3>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:text-orange-500">About Us</a></li>
+                    <li><a href="#" class="hover:text-orange-500">Contact Us</a></li>
+                    <li><a href="#" class="hover:text-orange-500">Return Policy</a></li>
+                    <li><a href="#" class="hover:text-orange-500">Privacy Policy</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h3 class="font-semibold text-white mb-4">Quick Links</h3>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:text-orange-500">Our Products</a></li>
+                    <li><a href="#" class="hover:text-orange-500">New Arrivals</a></li>
+                    <li><a href="#" class="hover:text-orange-500">Deals of the Week</a></li>
+                    <li><a href="#" class="hover:text-orange-500">Gift Cards</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h3 class="font-semibold text-white mb-4">Subscribe now</h3>
+                <p class="text-sm mb-4">Subscribe to our newsletter to receive weekly promotions.</p>
+                <form class="flex">
+                    <input type="email" placeholder="Your email here" class="flex-1 p-2 rounded-l-lg border-none text-gray-900" />
+                    <button type="submit" class="bg-orange-500 text-white p-2 rounded-r-lg">
+                        <i class="fas fa-envelope"></i>
+                    </button>
+                </form>
+                <div class="mt-6">
+                    <h4 class="text-white mb-2">Payment Methods</h4>
+                    <!-- <img src="imges/logo.png" alt="Payment methods" class="w-full max-w-xs" /> -->
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-gray-700 mt-8 pt-4 text-center text-sm">
+            <p>&copy; 2023 My Store. All rights reserved.</p>
+        </div>
+    </footer>
+
+ <script src="script.js"></script>
+</body>
+</html>

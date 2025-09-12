@@ -1,0 +1,14 @@
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;  /* IE و Edge */
+    scrollbar-width: none;     /* Firefox */
+  }
+   @keyframes slideIn {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+  }
+  .animate-slideIn {
+    animation: slideIn 0.3s ease-out;
+  }
